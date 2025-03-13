@@ -1,0 +1,34 @@
+{
+    "name": "genzo",
+    "version": "0.0.4",
+    "scripts": {
+      "dev": "pnpm -r --workspace-concurrency Infinity dev",
+      "build": "pnpm -r --workspace-concurrency Infinity build",
+      "theme": "pnpm -F genzo-theme",
+      "plugin": "pnpm -F genzo-plugin",
+      "version": "replace-in-files --regex='(Version:\\s*?)\\d+\\.\\d+\\.\\d+(\\-rc\\.\\d+)?' --replacement='$1'$npm_package_version 'wp-content/themes/genzo/style.css'",
+      "prod:local:db": "source .env.local && wp @prod db export - | wp db import - && wp search-replace $PROD_DOMAIN $LOCAL_DOMAIN --all-tables --report-changed-only && wp plugin activate show-current-template --network",
+      "prod:local:uploads": "source .env.local && rsync -ahuvz $PROD_UPLOADS/ $LOCAL_UPLOADS/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/GNZ444/https-github.com-GNZ444-genzo.git"
+    },
+    "packageManager": "pnpm@9.1.0",
+    "engines": {
+      "node": ">=20.13",
+      "npm": "Please use pnpm!",
+      "yarn": "Please use pnpm!",
+      "pnpm": ">=9.1.0"
+    },
+    "author": "KITERETZ inc.",
+    "private": true,
+    "license": "UNLICENSED",
+    "bugs": {
+      "url": "https://github.com/GNZ444/https-github.com-GNZ444-genzo.git/issues"
+    },
+    "homepage": "https://github.com/GNZ444/https-github.com-GNZ444-genzo.git#readme",
+    "dependencies": {
+      "replace-in-files-cli": "^2.2.0"
+    }
+  }
