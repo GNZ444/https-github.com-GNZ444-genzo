@@ -1,12 +1,12 @@
 {
-    "name": "genzo",
-    "version": "0.0.4",
+    "name": "genzohp-theme",
+    "version": "1.0.0",
     "scripts": {
       "dev": "pnpm -r --workspace-concurrency Infinity dev",
       "build": "pnpm -r --workspace-concurrency Infinity build",
-      "theme": "pnpm -F genzo-theme",
-      "plugin": "pnpm -F genzo-plugin",
-      "version": "replace-in-files --regex='(Version:\\s*?)\\d+\\.\\d+\\.\\d+(\\-rc\\.\\d+)?' --replacement='$1'$npm_package_version 'wp-content/themes/genzo/style.css'",
+      "theme": "pnpm -F genzohp-theme",
+      "plugin": "pnpm -F genzohp-plugin",
+      "version": "replace-in-files --regex='(Version:\\s*?)\\d+\\.\\d+\\.\\d+(\\-rc\\.\\d+)?' --replacement='$1'$npm_package_version 'wp-content/themes/genzohp/style.css'",
       "prod:local:db": "source .env.local && wp @prod db export - | wp db import - && wp search-replace $PROD_DOMAIN $LOCAL_DOMAIN --all-tables --report-changed-only && wp plugin activate show-current-template --network",
       "prod:local:uploads": "source .env.local && rsync -ahuvz $PROD_UPLOADS/ $LOCAL_UPLOADS/"
     },
@@ -21,7 +21,7 @@
       "yarn": "Please use pnpm!",
       "pnpm": ">=9.1.0"
     },
-    "author": "KITERETZ inc.",
+    "author": "Goto",
     "private": true,
     "license": "UNLICENSED",
     "bugs": {
