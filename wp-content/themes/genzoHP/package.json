@@ -16,7 +16,7 @@
       "dist": "assets/images"
     },
     "js": {
-      "entry": "src/ts/main.ts",
+      "entry": "src/js/main.js",
       "output": "assets/js"
     },
     "tailwind": {
